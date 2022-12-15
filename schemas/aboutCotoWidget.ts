@@ -6,26 +6,17 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'About coto title',
-      type: 'string',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
       name: 'description',
       title: 'About coto description',
       type: 'array',
       of: [{type: 'block'}],
+      Rule: (Rule: Rule) => Rule.required(),
     },
   ],
   preview: {
-    select: {
-      title: 'title',
-    },
-    prepare(selection: any) {
-      const {title} = selection
+    prepare() {
       return {
-        title: title,
+        title: 'About coto',
         subtitle: `About organisation`,
       }
     },

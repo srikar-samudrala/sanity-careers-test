@@ -6,26 +6,17 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'How to apply section title',
-      type: 'string',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
       name: 'description',
       title: 'Describe the process of how to apply',
       type: 'array',
       of: [{type: 'block'}],
+      validation: (Rule: Rule) => Rule.required(),
     },
   ],
   preview: {
-    select: {
-      title: 'title',
-    },
-    prepare(selection: any) {
-      const {title} = selection
+    prepare() {
       return {
-        title: title,
+        title: 'How to apply',
         subtitle: `How to apply`,
       }
     },

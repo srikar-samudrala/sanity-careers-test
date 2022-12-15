@@ -6,26 +6,17 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Job benefits title',
-      type: 'string',
-      validation: (Rule: Rule) => Rule.required(),
-    },
-    {
       name: 'description',
       title: 'Describe the benefits',
       type: 'array',
       of: [{type: 'block'}],
+      validation: (Rule: Rule) => Rule.required(),
     },
   ],
   preview: {
-    select: {
-      title: 'title',
-    },
-    prepare(selection: any) {
-      const {title} = selection
+    prepare() {
       return {
-        title: title,
+        title: 'Benefits',
         subtitle: `Job benefits`,
       }
     },
