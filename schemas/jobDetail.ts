@@ -56,6 +56,20 @@ export default {
   ],
   initialValue: {
     isRemote: true,
+    widgets: [
+      {
+        _type: 'aboutCotoReference',
+        _ref: 'aboutCoto',
+      },
+      {
+        _type: 'jobBenefitsReference',
+        _ref: 'jobBenefits',
+      },
+      {
+        _type: 'howToApplyReference',
+        _ref: 'howToApply',
+      },
+    ],
   },
   preview: {
     select: {
